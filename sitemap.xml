@@ -1,8 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- الصفحة الرئيسية -->
   <url>
     <loc>https://cr7mr7.github.io/C7-for-car-care7/</loc>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
+
+  <!-- صور الموقع -->
+  <url>
+    <loc>https://cr7mr7.github.io/C7-for-car-care7/logo.png</loc>
+    <image:image>
+      <image:loc>https://cr7mr7.github.io/C7-for-car-care7/logo.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cr7mr7.github.io/C7-for-car-care7/wash.png</loc>
+    <image:image>
+      <image:loc>https://cr7mr7.github.io/C7-for-car-care7/wash.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cr7mr7.github.io/C7-for-car-care7/nan9o.png</loc>
+    <image:image>
+      <image:loc>https://cr7mr7.github.io/C7-for-car-care7/nan9o.png</image:loc>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cr7mr7.github.io/C7-for-car-care7/professional-vehicle-body-polishing-2.jpg</loc>
+    <image:image>
+      <image:loc>https://cr7mr7.github.io/C7-for-car-care7/professional-vehicle-body-polishing-2.jpg</image:loc>
+    </image:image>
+  </url>
+
 </urlset>
