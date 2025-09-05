@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>C7 | العناية بالسيارات</title>
+<style>
+  :root {
+    --primary: #4a90e2;
+    --secondary: #50e3c2;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #333; 
+    --text-light: #555;
+  }
+
+  body {
+    font-family: 'Arial', sans-serif; 
+    margin:0; padding:0; 
+    background:var(--bg); 
+    color:var(--text);
+  }
+
+  header {
+    background:var(--primary); 
+    color:white; 
+    padding:20px; 
+    display:flex; 
+    align-items:center; 
+    justify-content:space-between; 
+    flex-wrap:wrap;
+  }
+
+  header img {height:80px; margin-right:10px;}
+  header h1 {margin:0; font-size:26px;}
+  nav a {color:white; margin:0 10px; text-decoration:none; font-weight:bold;}
+
+  section {max-width:1000px; margin:40px auto; padding:0 20px;}
+  h2 {text-align:center; margin-bottom:20px; font-size:26px; color:var(--primary);}
+  .services, .packages {display:flex; flex-wrap:wrap; gap:20px; justify-content:center;}
+  .card {background:var(--card); padding:20px; border-radius:12px; width:280px; box-shadow:0 4px 10px rgba(0,0,0,0.1); text-align:center;}
+  .card img {width:100%; height:160px; object-fit:cover; border-radius:12px;}
+  .btn {display:inline-block; padding:10px 20px; background:var(--primary); color:white; text-decoration:none; border-radius:8px; margin-top:10px; transition:0.3s;}
+  .btn:hover {background:var(--secondary);}
+
+  form {background:var(--card); padding:20px; border-radius:12px; max-width:600px; margin:0 auto;}
+  form input, form select, form textarea {
+    width:100%; padding:10px; margin:8px 0; border-radius:6px; border:1px solid #ccc; 
+    font-size:16px;
+  }
+
+  #map {height:300px; width:100%; margin:10px 0; border-radius:10px;}
+
+  form button {
+    background:var(--primary); color:white; padding:10px 20px; border:none; border-radius:8px; cursor:pointer; transition:0.3s;
+  }
+
+  form button:hover {background:var(--secondary);}
+
+  footer {background:#111; color:white; text-align:center; padding:20px; margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="logo.png" alt="C7 Logo" height="100px">
+  <h1>C7 | العناية بالسيارات</h1>
+  <nav>
+    <a href="#services">الخدمات</a>
+    <a href="#packages">الباقات</a>
+    <a href="#booking">حجز</a>
+  </nav>
+</header>
+
+<section id="services">
+  <h2>خدماتنا</h2>
+  <div class="services">
+    <div class="card">
+      <img src="wash.png" alt="غسل وتنظيف">
+      <h3>غسل وتنظيف</h3>
+      <ul>
+        <li>غسل خارجي رغوي</li>
+        <li>تنشيف مايكروفايبر</li>
+        <li>تنظيف جنوط سريع</li>
+      </ul>
+      <a class="btn" href="#booking">احجز الآن</a>
+    </div>
+    <div class="card">
+      <img src="66ac438b0bd51bac3ca3ada1_car-paint-protection.jpg" alt="بوليش وتلميع">
+      <h3>بوليش وتلميع</h3>
+      <ul>
+        <li>تصحيح خدوش خفيفة</li>
+        <li>رفع اللمعة</li>
+        <li>حماية Wax</li>
+      </ul>
+      <a class="btn" href="#booking">احجز الآن</a>
+    </div>
+    <div class="card">
+      <img src="nan9o.png" alt="نانو سيراميك">
+      <h3>نانو سيراميك</h3>
+      <ul>
+        <li>معالجة سطحية</li>
+        <li>طبقة حماية 1-2 سنوات</li>
+        <li>صيانة بعد 6 أشهر</li>
+      </ul>
+      <a class="btn" href="#booking">احجز الآن</a>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="packages">
+    <div class="card">
+      <img src="professional-vehicle-body-polishing-2.jpg" alt="بوليش 2 مراحل">
+      <h3>بوليش 2 مراحل</h3>
+      <p>تصحيح متوسط للخدوش ورفع لمعان الطلاء</p>
+      <a class="btn" href="#booking">احجز الباقة</a>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <h2>حجز الخدمة</h2>
+  <form id="bookingForm">
+    <input type="text" name="name" placeholder="الاسم الكامل" required>
+    <input type="tel" name="phone" placeholder="رقم الهاتف" required>
+    <input type="text" name="car" placeholder="نوع السيارة (مثال: تويوتا)" required>
+    <input type="text" name="model" placeholder="موديل السيارة (مثال: 2020)" required>
+
+    <h3>حدد موقعك على الخريطة:</h3>
+    <div id="map"></div>
+    <input type="text" id="location" name="location" placeholder="الموقع" readonly required>
+
+    <select name="service" required>
+      <option value="">اختر الخدمة</option>
+      <option value="غسل وتنظيف">غسل وتنظيف</option>
+      <option value="بوليش وتلميع">بوليش وتلميع</option>
+      <option value="نانو سيراميك">نانو سيراميك</option>
+    </select>
+
+    <input type="date" name="date" required>
+    <textarea name="notes" placeholder="ملاحظات إضافية"></textarea>
+    <button type="submit">تأكيد الحجز</button>
+  </form>
+</section>
+
+<footer>
+  تم إنشاء الموقع بواسطة C7 | العناية بالسيارات. صلوا على محمد وآل محمد
+</footer>
+
+<script>
+  // Google Maps API
+  function initMap() {
+    const defaultLocation = { lat: 33.3128, lng: 44.3615 }; // بغداد
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 12,
+      center: defaultLocation,
+    });
+
+    let marker = new google.maps.Marker({
+      position: defaultLocation,
+      map: map,
+      draggable: true
+    });
+
+    map.addListener('click', function(event) {
+      marker.setPosition(event.latLng);
+      document.getElementById("location").value =
+        `https://www.google.com/maps?q=${event.latLng.lat()},${event.latLng.lng()}`;
+    });
+  }
+
+  // إرسال البيانات للواتساب
+  const form = document.getElementById('bookingForm');
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = form.name.value;
+    const phone = form.phone.value;
+    const car = form.car.value;
+    const model = form.model.value;
+    const location = form.location.value;
+    const service = form.service.value;
+    const date = form.date.value;
+    const notes = form.notes.value;
+
+    const message = `حجز جديد:%0Aالاسم: ${name}%0Aالهاتف: ${phone}%0Aالسيارة: ${car}%0Aالموديل: ${model}%0Aالموقع: ${location}%0Aالخدمة: ${service}%0Aالتاريخ: ${date}%0Aملاحظات: ${notes}`;
+  
+    window.open(`https://wa.me/9647840510496?text=${message}`, '_blank');
+    form.reset();
+  });
+</script>
+
+<script async
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDy3AAav8ULCiNamHBJXhlZxPzzE_UxYoo&callback=initMap">
+</script>
+
+</body>
+</html>
